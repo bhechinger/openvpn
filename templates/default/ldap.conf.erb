@@ -1,5 +1,5 @@
 <LDAP>
-<%- @ldap_auth['ldap'].sort.each do |key, values| -%>
+<%- @ldap.sort.each do |key, values| -%>
 <%- [*values].each do |value| -%>
 <%- next if value.nil? -%>
 <%= key %> <%=
@@ -19,7 +19,7 @@
 </LDAP>
 
 <Authorization>
-<%- @ldap_auth['authorization'].sort.each do |key, values| -%>
+<%- @authorization.sort.each do |key, values| -%>
 <%- [*values].each do |value| -%>
 <%- next if value.nil? -%>
 <%= key %> <%=
@@ -37,7 +37,7 @@
 <%- end -%>
 <%- end -%>
   <Group>
-  <%- @ldap_auth['authorization']['group'].sort.each do |key, values| -%>
+  <%- @authorization_group.sort.each do |key, values| -%>
   <%- [*values].each do |value| -%>
   <%- next if value.nil? -%>
   <%= key %> <%=
