@@ -1,0 +1,52 @@
+<LDAP>
+<%- @ldap_auth['ldap'].sort.each do |key, values| -%>
+<%- [*values].each do |value| -%>
+<%- next if value.nil? -%>
+<%= key %> <%=
+  case value
+    when String
+      value
+    when TrueClass
+      'yes'
+    when FalseClass
+      'no'
+    else
+      value
+  end
+%>
+</LDAP>
+
+<Authorization>
+<%- @ldap_auth['authorization'].sort.each do |key, values| -%>
+<%- [*values].each do |value| -%>
+<%- next if value.nil? -%>
+<%= key %> <%=
+  case value
+    when String
+      value
+    when TrueClass
+      1
+    when FalseClass
+      0
+    else
+      value
+  end
+%>
+  <Group>
+  <%- @ldap_auth['authorization']['group'].sort.each do |key, values| -%>
+  <%- [*values].each do |value| -%>
+  <%- next if value.nil? -%>
+  <%= key %> <%=
+    case value
+      when String
+        value
+      when TrueClass
+        1
+      when FalseClass
+        0
+      else
+        value
+    end
+  %>
+  </Group>
+</Authorization>
