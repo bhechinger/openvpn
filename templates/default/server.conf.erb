@@ -41,5 +41,5 @@ push "route <%= route %>"
 # Setup OpenVPN-Auth-LDAP
 #
 
-plugin /usr/lib64/openvpn/plugin/lib/openvpn-auth-ldap.so <%= @ldap_auth.config_file %>
+plugin /usr/lib64/openvpn/plugin/lib/openvpn-auth-ldap.so <%= @ldap_auth['config_file'] %>
 <% end %>
