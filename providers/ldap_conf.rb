@@ -33,27 +33,11 @@ action :create do
       authorization: new_resource.authorization || node['openvpn']['ldap_auth']['authorization'],
       authorization_group: new_resource.authorization || node['openvpn']['ldap_auth']['authorization']['group']
     )
-    helpers do
-      def render_push_options(push_options)
-        return [] if push_options.nil?
-        push_options.each_with_object([]) do |(option, conf), m|
-          case conf
-          when Chef::Node::ImmutableArray, Array
-            conf.each { |o| m << "push \"#{option} #{o}\"" }
-          when String
-            m << "push \"#{option} #{conf}\""
-          else
-            raise "Push option data type #{conf.class} not supported"
-          end
-        end
-      end
-      # rubocop:enable Metrics/MethodLength
-    end
   end
 end
 
 action :delete do
-  file [node['openvpn']['fs_prefix'], "/etc/openvpn/#{new_resource.name}.conf"].join do
+  file [node['openvpn']['fs_prefix'], "/etc/openvpn/ldap.name}.conf"].join do
     action :delete
   end
 end
