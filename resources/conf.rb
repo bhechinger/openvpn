@@ -26,3 +26,5 @@ attribute :push_routes,
           kind_of: Array
 attribute :push_options,
           kind_of: Array
+attribute :ldap_options,
+          kind_of: Hash
