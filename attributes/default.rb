@@ -109,3 +109,28 @@ when 'server'
 when 'server-bridge'
   default['openvpn']['config']['dev'] = 'tap0'
 end
+
+# OpenVPN LDAP Auth settings
+default['openvpn']['ldap_auth']['enabled'] = false
+default['openvpn']['ldap_auth']['config_file'] = '/etc/openvpn/ldap.conf'
+
+default['openvpn']['ldap_auth']['ldap']['URL'] = 'ldap://ldap1.example.org'
+default['openvpn']['ldap_auth']['ldap']['BindDN'] = 'uid=Manager,ou=People,dc=example,dc=com'
+default['openvpn']['ldap_auth']['ldap']['Password'] = 'SuperSeekretPassword'
+default['openvpn']['ldap_auth']['ldap']['Timeout'] = 15
+default['openvpn']['ldap_auth']['ldap']['TLSEnable'] = true
+default['openvpn']['ldap_auth']['ldap']['FollowReferrals'] = true
+default['openvpn']['ldap_auth']['ldap']['TLSCACertFile'] = '/usr/local/etc/ssl/ca.pem'
+default['openvpn']['ldap_auth']['ldap']['TLSCACertDir'] = '/etc/ssl/certs'
+default['openvpn']['ldap_auth']['ldap']['TLSCertFile'] = '/usr/local/etc/ssl/client-cert.pem'
+default['openvpn']['ldap_auth']['ldap']['TLSKeyFile'] = '/usr/local/etc/ssl/client-key.pem'
+default['openvpn']['ldap_auth']['ldap']['TLSCipherSuite'] = ''
+
+default['openvpn']['ldap_auth']['authorization']['BaseDN'] = 'ou=People,dc=example,dc=com'
+default['openvpn']['ldap_auth']['authorization']['SearchFilter'] = '(&(uid=%u)(accountStatus=active))'
+default['openvpn']['ldap_auth']['authorization']['RequireGroup'] = false
+default['openvpn']['ldap_auth']['authorization']['PFTable'] = ''
+default['openvpn']['ldap_auth']['authorization']['group']['BaseDN'] = 'ou=Groups,dc=example,dc=com'
+default['openvpn']['ldap_auth']['authorization']['group']['SearchFilter'] = '(|(cn=developers)(cn=artists))'
+default['openvpn']['ldap_auth']['authorization']['group']['MemberAttribute'] = 'uniqueMember'
+default['openvpn']['ldap_auth']['authorization']['group']['PFTable'] = ''

@@ -36,7 +36,7 @@ push "route <%= route %>"
   <% end -%>
 <% end %>
 
-<% unless @ldap_auth.empty? %>
+<% if @ldap_auth.['enabled'] %>
 #
 # Setup OpenVPN-Auth-LDAP
 #
