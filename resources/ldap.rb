@@ -20,10 +20,11 @@ actions :create, :delete
 default_action :create
 
 attribute :cookbook, kind_of: String, default: 'openvpn'
-attribute :config,
+attribute :ldap_auth,
           kind_of: Hash
-attribute :push_routes,
-          kind_of: Array
-attribute :push_options,
-          kind_of: Array
-
+attribute :ldap,
+          kind_of: Hash
+attribute :authorization,
+          kind_of: Hash
+attribute :authorization_group,
+          kind_of: Hash
