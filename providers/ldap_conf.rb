@@ -19,12 +19,9 @@
 use_inline_resources
 
 action :create do
-  # FreeBSD service uses openvpn.conf
-  template_source = 'ldap.conf.erb'
-
   template [node['openvpn']['fs_prefix'], "/etc/openvpn/ldap.conf"].join do
     cookbook new_resource.cookbook
-    source template_source
+    source 'ldap.conf.erb'
     owner 'root'
     group node['openvpn']['root_group']
     mode '644'
