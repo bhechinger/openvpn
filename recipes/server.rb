@@ -27,6 +27,11 @@ p = package 'bash' do
 end
 p.run_action(:install)
 
+# install this package if we're doing ldap:
+package 'openvpn-auth-ldap' do
+  only_if { node['openvpn']['ldap_auth']['enabled'] }
+end
+
 # in the case the key size is provided as string, no integer support in metadata (CHEF-4075)
 node.override['openvpn']['key']['size'] = node['openvpn']['key']['size'].to_i
 
