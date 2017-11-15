@@ -130,7 +130,7 @@ default['openvpn']['ldap_auth']['authorization']['BaseDN'] = 'ou=People,dc=examp
 default['openvpn']['ldap_auth']['authorization']['SearchFilter'] = '(&(uid=%u)(accountStatus=active))'
 default['openvpn']['ldap_auth']['authorization']['RequireGroup'] = false
 default['openvpn']['ldap_auth']['authorization']['PFTable'] = nil
-default['openvpn']['ldap_auth']['authorization']['group']['BaseDN'] = 'ou=Groups,dc=example,dc=com'
-default['openvpn']['ldap_auth']['authorization']['group']['SearchFilter'] = '(|(cn=developers)(cn=artists))'
-default['openvpn']['ldap_auth']['authorization']['group']['MemberAttribute'] = 'uniqueMember'
-default['openvpn']['ldap_auth']['authorization']['group']['PFTable'] = nil
+default['openvpn']['ldap_auth']['authorization_group']['BaseDN'] = 'ou=Groups,dc=example,dc=com'
+default['openvpn']['ldap_auth']['authorization_group']['SearchFilter'] = '(|(cn=developers)(cn=artists))'
+default['openvpn']['ldap_auth']['authorization_group']['MemberAttribute'] = 'uniqueMember'
+default['openvpn']['ldap_auth']['authorization_group']['PFTable'] = nil

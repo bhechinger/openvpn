@@ -1,5 +1,5 @@
 name              'openvpn'
-version           '3.0.20'
+version           '3.0.21'
 maintainer        'Xhost Australia'
 maintainer_email  'cookbooks@xhost.com.au'
 license           'Apache 2.0'

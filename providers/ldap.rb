@@ -28,7 +28,7 @@ action :create do
     variables(
       ldap: new_resource.ldap || node['openvpn']['ldap_auth']['ldap'],
       authorization: new_resource.authorization || node['openvpn']['ldap_auth']['authorization'],
-      authorization_group: new_resource.authorization || node['openvpn']['ldap_auth']['authorization']['group']
+      authorization_group: new_resource.authorization || node['openvpn']['ldap_auth']['authorization_group']
     )
   end
 end
