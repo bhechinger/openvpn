@@ -2,7 +2,7 @@
 <%- @ldap.sort.each do |key, values| -%>
 <%- [*values].each do |value| -%>
 <%- next if value.nil? -%>
-<%= key %> <%=
+  <%= key %>      <%=
   case value
     when String
       value
@@ -22,7 +22,7 @@
 <%- @authorization.sort.each do |key, values| -%>
 <%- [*values].each do |value| -%>
 <%- next if value.nil? -%>
-<%= key %> <%=
+  <%= key %>      <%=
   case value
     when String
       value
@@ -40,7 +40,7 @@
   <%- @authorization_group.sort.each do |key, values| -%>
   <%- [*values].each do |value| -%>
   <%- next if value.nil? -%>
-  <%= key %> <%=
+    <%= key %>      <%=
     case value
       when String
         value
