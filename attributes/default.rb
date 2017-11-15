@@ -124,13 +124,13 @@ default['openvpn']['ldap_auth']['ldap']['TLSCACertFile'] = '/usr/local/etc/ssl/c
 default['openvpn']['ldap_auth']['ldap']['TLSCACertDir'] = '/etc/ssl/certs'
 default['openvpn']['ldap_auth']['ldap']['TLSCertFile'] = '/usr/local/etc/ssl/client-cert.pem'
 default['openvpn']['ldap_auth']['ldap']['TLSKeyFile'] = '/usr/local/etc/ssl/client-key.pem'
-default['openvpn']['ldap_auth']['ldap']['TLSCipherSuite'] = ''
+default['openvpn']['ldap_auth']['ldap']['TLSCipherSuite'] = nil
 
 default['openvpn']['ldap_auth']['authorization']['BaseDN'] = 'ou=People,dc=example,dc=com'
 default['openvpn']['ldap_auth']['authorization']['SearchFilter'] = '(&(uid=%u)(accountStatus=active))'
 default['openvpn']['ldap_auth']['authorization']['RequireGroup'] = false
-default['openvpn']['ldap_auth']['authorization']['PFTable'] = ''
+default['openvpn']['ldap_auth']['authorization']['PFTable'] = nil
 default['openvpn']['ldap_auth']['authorization']['group']['BaseDN'] = 'ou=Groups,dc=example,dc=com'
 default['openvpn']['ldap_auth']['authorization']['group']['SearchFilter'] = '(|(cn=developers)(cn=artists))'
 default['openvpn']['ldap_auth']['authorization']['group']['MemberAttribute'] = 'uniqueMember'
-default['openvpn']['ldap_auth']['authorization']['group']['PFTable'] = ''
+default['openvpn']['ldap_auth']['authorization']['group']['PFTable'] = nil
