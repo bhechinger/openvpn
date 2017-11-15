@@ -158,7 +158,7 @@ conf_name = if node['platform'] == 'freebsd'
               'server'
             end
 
-ldap_conf 'ldap' do
+openvpn_ldap 'ldap' do
   notifies :restart, 'service[openvpn]'
   only_if { node['openvpn']['auth_ldap']['enabled'] }
   action :create
