@@ -27,9 +27,9 @@
     when String
       value
     when TrueClass
-      1
+      true
     when FalseClass
-      0
+      false
     else
       value
   end
@@ -43,11 +43,11 @@
     <%= key %>      <%=
     case value
       when String
-        value
+        "#{value}"
       when TrueClass
-        1
+        true
       when FalseClass
-        0
+        false
       else
         value
     end
