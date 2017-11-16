@@ -22,6 +22,13 @@
 <%- end -%>
 <%- end -%>
 
+<%- unless @config_extras.empty? -%>
+# Extra settings that don't have a value
+<%- @config_extras.sort.each do |option| -%>
+<%= option %>
+<%- end -%>
+<%- end -%>
+
 <% unless @push_routes.empty? %>
 # additional routes to push to clients
   <% @push_routes.each do |route| %>

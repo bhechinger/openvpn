@@ -34,6 +34,7 @@ action :create do
     mode '644'
     variables(
       config: new_resource.config || node['openvpn']['config'],
+      config_extras: new_resource.config_extras || node['openvpn']['config_extras'],
       push_routes: new_resource.push_routes || node['openvpn']['push_routes'],
       push_options: new_resource.push_options || node['openvpn']['push_options'],
       ldap_auth: new_resource.ldap_auth || node['openvpn']['ldap_auth'],
